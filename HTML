@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html ng-app="UserStroyApp">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Story</title>
+    <link rel="stylesheet" href="../css/site.css">
+    
+    <link rel="stylesheet" type="text/css" href="../plugins/bootstrap-dataTables/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="../plugins/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <header class="nav">
+    <nav class="navbar navbar-static-top" role="navigation">
+        <h1 class="navbar-brand">JS Interview Challenge</h1>
+        </nav>
+    </header>
+    <div class="wrap">
+    </div>    
+    <div class="container">
+        <div ng-controller="UserStoryCtrl as vm">
+            <table id="table-info" datatable="ng" dt-options="vm.dtOptions" dt-column-defs="vm.dtColumnDefs" class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th width="10%">Id</th>
+                        <th width="10%">User Id</th>
+                        <th width="30%">Title</th>
+                        <th width="50%">Body</th>
+                        <th width="50%">View</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="post in vm.posts">
+                        <td>{{post.id}}</td>
+                        <td>{{post.userId}}</td>
+                        <td>{{post.title}}</td>
+                        <td>{{post.body}}</td>
+                        <td>                            
+                            <button type="button" class="btn btn-sm  btn-primary glyphicon glyphicon-eye-open" ng-click="vm.view(post);" aria-hidden="true"></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="modal animated fadeIn" id="viewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" data-dismiss="modal" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title text-center" id="myModalLabel"> Post Details</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col-lg-1 bold">
+                                Id:
+                            </div>
+                            <div class="col-lg-11">
+                                {{vm.fullDetails.id}}
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-1 bold">
+                                UserId:
+                            </div>
+                            <div class="col-lg-11">
+                                {{vm.fullDetails.userId}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-1 bold">
+                                Title:
+                            </div>
+                            <div class="col-lg-11">
+                                {{vm.fullDetails.title}}
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-1 bold">
+                                Body:
+                            </div>
+                            <div class="col-lg-11">
+                                {{vm.fullDetails.body}}
+                            </div>
+                        </div>
+                            
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="modal fade" tabindex="-1" role="dialog" id="pre_loader">
+            <div class="modal-dialog">
+                <div class="modal-content pre-loader">
+                    <div class="modal-body text-center">
+                        <p>Loading...</p>
+                        <img src="../images/pre-loader.gif" alt="Loading...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        Copyrights 2016 - 2017
+    </footer>
+</body>
+<script src="../plugins/jQuery/jquery-2.2.2.min.js"></script>
+<script src="../plugins/jQuery-dataTables/jquery.dataTables.min.js"></script>
+<script src="../plugins/angular/angular.min.js"></script>
+<script src="../plugins/angular-dataTables/angular-datatables.min.js"></script>
+<script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="../js/userstory/app/app.js"></script>
+<script src="../js/userstory/services/user.story.service.js"></script>
+<script src="../js/userstory/controllers/user.story.controller.js"></script>
+</script>
+</html>
