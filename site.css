@@ -1,0 +1,73 @@
+body{
+    font-family: Segoe UI !important;
+    }
+    .paginate_button {
+   border: 1px solid;
+   padding: 10px;
+   margin: 3px;
+   cursor: pointer;
+   font-size: 13px;
+}
+.disabled{
+background-color: #ddd;
+cursor: not-allowed;
+}
+.current{
+background-color: #428bca;color: white;
+}
+
+.pre-loader{
+    width: 90px;
+    height: 90px;
+    margin:auto;
+}
+.navbar{
+      background-color: #7b1fa2;
+          padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+footer{
+      margin-top: 50px;
+    background-color: #2a2730;
+    padding: 25px;
+    text-align: center;
+    color: white;
+}
+input,select {
+        border-radius: 0;
+    box-shadow: none;
+    border-color: #d2d6de;
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+}
+.dataTables_length{
+  float: left;
+}
+.bold{
+  font-weight: bold;
+}
+.modal-body{
+  line-height: 25px;
+}
+#viewModal .modal-content{
+      border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-top: 5px solid #EA0000!important;
+}
+.wrap{
+      height: 200px;
+    background-color: #9c27b0;
+    margin-top: -20px;
+}
+#table-info_wrapper{
+      margin-top: -160px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
